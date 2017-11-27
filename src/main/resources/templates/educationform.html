@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>All Resumes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<form th:action="@{/addEducation}" th:object="${education}" th:method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div class="row">
+        <div class="form-group">
+            Degree Type    :  <input class="form-control"  type="text" th:field="*{degreeType}"/>
+            <span th:if="${#fields.hasErrors('degreeType')}" th:errors="*{degreeType}"></span> <br/>
+
+        </div>
+        <div class="form-group">
+            Field of Study : <input  class="form-control" type="text" th:field="*{fieldOfStudy}"/>
+            <span th:if="${#fields.hasErrors('fieldOfStudy')}" th:errors="*{fieldOfStudy}"></span> <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+
+            University     : <input class="form-control"  type="text" th:field="*{school}"/>
+            <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></span> <br/>
+        </div>
+        <div class="form-group">
+            Graduation Year: <input class="form-control"  type="number" th:field="*{gradYear}"/>
+            <span th:if="${#fields.hasErrors('gradYear')}" th:errors="*{gradYear}"></span> <br/>
+        </div>
+
+    </div>
+
+
+
+    <input  class="btn btn-success" type="submit" value="Submit" />
+</form>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

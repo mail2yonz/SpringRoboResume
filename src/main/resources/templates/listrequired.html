@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of qualified users</title>
+</head>
+<body>
+
+<table>
+    <tr>
+
+        <th>Your Name</th>
+        <th>Email</th>
+        <th>Skill</th>
+    </tr>
+<tr th:each="user : ${users}">
+
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.email}"></td>
+
+    <td> <tr th:each="myskill: ${skills}">
+    <td th:text="${myskill.skill}"></td>  </td>
+
+     </tr>
+</tr>
+
+
+
+
+
+
+</table>
+
+</body>
+</html>

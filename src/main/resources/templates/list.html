@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List Of Resumes</title>
+</head>
+<body>
+
+<table>
+    <tr>
+
+        <th>Your Name</th>
+        <th>Email</th>
+        <th>Degree Type</th>
+        <th>University</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Duty</th>
+        <th>Skill</th>
+    </tr>
+    <tr th:each="user :${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+
+
+        <tr th:each="education:${educations}">
+            <td th:text="${education.degreeType}"></td>
+            <td th:text="${education.fieldOfStudy}"></td>
+            <td th:text="${education.school}"></td>
+            <td th:text="${education.gradYear}"></td>
+         </tr>
+
+
+
+
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>

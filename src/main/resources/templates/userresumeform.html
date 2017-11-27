@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Resume Form</title>
+</head>
+<body>
+<form th:action="@{/register}" th:object="${user}" method="post">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <label>Full Name</label>
+            <input type="text" th:field="*{fullName}" placeholder="Enter your full Name"/>
+
+            <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">Full Name Error</span>
+
+        </div>
+
+        <div class="col-md-6">
+            <label>Email</label>
+            <input type="text" th:field="*{email}" placeholder="Enter your Email"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email address Error</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <label>Type of degree</label>
+            <input type="text" th:field="*{degreeType}" placeholder="Enter the type of Degree"/>
+
+            <span th:if="${#fields.hasErrors('degreeType')}" th:errors="*{degreeType}"> Degree Type Error</span>
+
+        </div>
+
+        <div class="col-md-6">
+            <label>Name of the School</label>
+            <input type="text" th:field="*{school}" placeholder="Enter The School you graduated From"/>
+            <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}">School Name Error</span>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <p><b>Experience</b></p>
+        <div class="col-md-4">
+            <label> Job Title </label>
+            <input type="text" th:field="*{jobTitle}" placeholder="Enter The Job Title"/>
+            <span th:if="${#fields.hasErrors('jobTitle')}" th:errors="*{jobTitle}">Enter the Job title</span>
+
+        </div>
+        <div class="col-md-4">
+            <label> Company Name </label>
+            <input type="text" th:field="*{company}" placeholder="Company Name and year from-to"/>
+            <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}">Enter the Company</span>
+
+        </div>
+
+        <div class="col-md-4">
+         <label>Duty</label>
+            <textarea rows="3"  th:field="*{duty}" placeholder="Enter your duties at the company"/>
+            <span th:if="${#fields.hasErrors('duty')}" th:errors="*{duty}">Enter Your Duties</span>
+
+
+        </div>
+         <a href="/duty">Add another Duty</a>
+
+
+    </div>
+
+<div class="row">
+
+    <p><b>Skills</b></p>
+    <div class="col-md-6">
+        <label>Skill</label>
+        <textarea  th:field="*{skill}" placeholder="Enter your skill and Skill level"/>
+        <span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}">Enter Your Skills</span>
+
+
+    </div>
+
+    <div class="col-md-6">
+        <label>Username</label>
+        <input type="text" th:field="*{username}" placeholder="Enter your Username"/>
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Enter Your Username</span>
+
+        <label>Password</label>
+        <input type="text" th:field="*{password}" placeholder="Enter your Password"/>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Enter Your Password</span>
+
+
+
+    </div>
+<input type="submit" value="Submit"/>
+</div>
+
+</form>
+</body>
+</html>
