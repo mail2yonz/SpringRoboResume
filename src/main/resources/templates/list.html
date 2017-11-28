@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8"/>
     <title>List Of Resumes</title>
+
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:100,200,400" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{css/custom.css}" rel="stylesheet"/>
 </head>
 <body>
+<div class="container">
 
-<table>
-    <tr>
+    <table>
+        <tr>
 
-        <th>Your Name</th>
-        <th>Email</th>
-        <th>Degree Type</th>
-        <th>University</th>
-        <th>Job Title</th>
-        <th>Company</th>
-        <th>Duty</th>
-        <th>Skill</th>
-    </tr>
-    <tr th:each="user :${users}">
-        <td th:text="${user.name}"></td>
-        <td th:text="${user.email}"></td>
+            <th>Your Name</th>
+            <th>Email</th>
+            <th>Degree Type</th>
+            <th>University</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Duty</th>
+            <th>Skill</th>
+        </tr>
+        <tr th:each="user :${users}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
 
 
         <tr th:each="education:${educations}">
@@ -28,16 +36,27 @@
             <td th:text="${education.fieldOfStudy}"></td>
             <td th:text="${education.school}"></td>
             <td th:text="${education.gradYear}"></td>
-         </tr>
+        </tr>
 
 
 
 
-    </tr>
+        </tr>
 
 
-</table>
+    </table>
 
+</div>
+
+
+<div class="container">
+    <br/><br/>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span class="copyright">Created by Yonatan  Mengesha 2017</span>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

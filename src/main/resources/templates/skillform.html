@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:100,200,400" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link th:href="@{css/custom.css}" rel="stylesheet"/>
 
 </head>
 <body>
 
-<form th:action="@{/addSkill}" th:object="${skills}" th:method="post">
-    <input type="hidden" th:field="*{id}"/>
-   <div class="form-group" >
-       Skill: <input  class="form-control" type="text" th:field="*{skill}"/>
-       <span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}"></span> <br/>
-   </div>
+<div class="container">
 
-   <div class="form-group">
-       Skill Level: <input class="form-control"  type="text" th:field="*{skillLevel}"/>
-       <span th:if="${#fields.hasErrors('skillLevel')}" th:errors="*{skillLevel}"></span> <br/>
-   </div>
+    <form th:action="@{/addSkill}" th:object="${skills}" th:method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="form-group" >
+            Skill: <input  class="form-control" type="text" th:field="*{skill}"/>
+            <span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}"></span> <br/>
+        </div>
 
-    <input  class="btn btn-success" type="submit" value="Submit" />
-</form>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+        <div class="form-group">
+            Skill Level: <input class="form-control"  type="text" th:field="*{skillLevel}"/>
+            <span th:if="${#fields.hasErrors('skillLevel')}" th:errors="*{skillLevel}"></span> <br/>
+        </div>
 
-<script
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous"></script>
+        <input  class="btn btn-success" type="submit" value="Submit" />
+    </form>
+
+</div>
+
+
+<div class="container">
+    <br/><br/>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span class="copyright">Created by Yonatan  Mengesha 2017</span>
+        </div>
+    </div>
+</div>
 </body>
 </html>

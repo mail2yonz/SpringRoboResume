@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Show All Resumes</title>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:100,200,400" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{css/custom.css}" rel="stylesheet"/>
+
 </head>
 <body>
 
 <a href="/">Show All Resumes</a><br/>
-<label>FullName:</label><span th:text="${user.fullName}"></span><br/>
-<label>Email:</label><span th:text="${user.email}"></span><br/>
-<label>Degree Type</label><span th:text="${user.degreeType}"></span><br/>
-<label>School</label><span th:text="${user.school}"></span><br/>
-<label>Job Title</label><span th:text="${user.jobTitle}"></span><br/>
-<label>Company</label><span th:text="${user.company}"></span><br/>
-<label>Duty</label><span th:text="${user.duty}"></span><br/>
-<label>Skill</label><span th:text="${user.skill}"></span><br/>
+<div class="container">
 
-<a th:href="@{/delete/{id}(id=${user.id} )}">Delete  this Resume</a>
+    <label>FullName:</label><span th:text="${user.fullName}"></span><br/>
+    <label>Email:</label><span th:text="${user.email}"></span><br/>
+    <label>Degree Type</label><span th:text="${user.degreeType}"></span><br/>
+    <label>School</label><span th:text="${user.school}"></span><br/>
+    <label>Job Title</label><span th:text="${user.jobTitle}"></span><br/>
+    <label>Company</label><span th:text="${user.company}"></span><br/>
+    <label>Duty</label><span th:text="${user.duty}"></span><br/>
+    <label>Skill</label><span th:text="${user.skill}"></span><br/>
+
+    <a th:href="@{/delete/{id}(id=${user.id} )}">Delete  this Resume</a>
+
+</div>
 
 
+<div class="container">
+    <br/><br/>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span class="copyright">Created by Yonatan  Mengesha 2017</span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
